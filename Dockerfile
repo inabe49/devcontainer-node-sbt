@@ -27,14 +27,14 @@ RUN set -x \
 # https://github.com/nodesource/distributions/blob/master/README.md
 RUN set -x \
         && apt-get update \
-        && curl -fsSL https://deb.nodesource.com/setup_16.x | -E bash - \
+        && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
         && apt-get install -y nodejs \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
 
 # Install SBT
 RUN set -x \
-apt-get update \
+        && apt-get update \
         && apt-get install apt-transport-https curl gnupg -yqq \
         && echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | tee /etc/apt/sources.list.d/sbt.list \
         && echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | tee /etc/apt/sources.list.d/sbt_old.list \
