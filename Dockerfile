@@ -1,4 +1,4 @@
-FROM ubuntu:28.04
+FROM ubuntu:20.04
 
 LABEL maintainer "Toshiaki Inahata <darwin49@gmail.com>"
 
