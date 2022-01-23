@@ -28,7 +28,7 @@ RUN set -x \
 RUN set -x \
         && apt-get update \
         && curl -fsSL https://deb.nodesource.com/setup_16.x | -E bash - \
-        && apt-get install -y nodejs
+        && apt-get install -y nodejs \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
 
@@ -42,5 +42,5 @@ apt-get update \
         && chmod 644 /etc/apt/trusted.gpg.d/scalasbt-release.gpg \
         && apt-get update \
         && apt-get install sbt \
-        && apt-get clean -y
+        && apt-get clean -y \
         && rm -rf /var/lib/apt/lists/*
